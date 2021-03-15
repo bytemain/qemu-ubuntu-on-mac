@@ -2,3 +2,4 @@
 *.qcow2
 
 tmp.txt
+snapshots
