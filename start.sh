@@ -1,0 +1,12 @@
+sudo qemu-system-x86_64 \
+  -m 4G \
+  -usb \
+  -smp 4 \
+  -drive file=./ubuntu-server1.qcow2,if=virtio \
+  -cdrom ./ubuntu-20.10-live-server-amd64.iso \
+  -machine type=q35,accel=hvf \
+  -cpu host \
+  -device usb-tablet \
+  -nic user,model=virtio \
+  -netdev tap,id=secnet0,script=./tap-up.sh,downscript=./tap-down.sh \
+  -device e1000,netdev=secnet0,mac=52:55:00:d1:55:01
