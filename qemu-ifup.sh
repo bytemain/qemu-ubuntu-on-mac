@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ifconfig bridge1 addm $1
+echo "use $1"
+ifconfig bridge0 addm $1
