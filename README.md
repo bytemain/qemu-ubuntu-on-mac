@@ -32,3 +32,16 @@ this can make you connect ubuntu server by ip:
 ```sh
 ssh artin@192.168.10.2
 ```
+
+If you need to SSH onto the system, you can add the following settings to the QEMU command: 
+
+```sh
+-net user,hostfwd=tcp::2222-:22 -net nic
+```
+
+Then you can connect via ssh user@loclhost -p 2222.
+
+
+## Setup NAT Network
+
+[](https://rambling-ideas.salessandri.name/setup-nat-network-for-qemu-in-mac-osx/)
