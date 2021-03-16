@@ -1,4 +1,8 @@
-sudo qemu-system-x86_64 \
+if (( $EUID != 0 )); then
+    echo "Please run as root"
+    exit
+fi
+qemu-system-x86_64 \
   -m 4G \
   -usb \
   -smp 6,maxcpus=16,sockets=2,cores=4,threads=2 \
