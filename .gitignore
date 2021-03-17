@@ -1,5 +1,8 @@
 *.iso
-*.qcow2
+*.image
 
 tmp.txt
 snapshots
+
+CDROM_LOCATION
+IMAGE_LOCATION

@@ -5,11 +5,12 @@ fi
 qemu-system-x86_64 \
   -m 4G \
   -usb \
+  -device usb-tablet \
+  -vga virtio \
   -smp 4,cores=2,threads=2 \
-  -drive file=./ubuntu-server1.qcow2,if=virtio \
+  -drive file=$(cat ./IMAGE_LOCATION),format=raw,if=virtio \
   -machine type=q35,accel=hvf \
   -cpu Nehalem-v1 \
-  -device usb-tablet \
   -net nic,model=virtio \
   -net tap,script=./qemu-ifup.sh,downscript=./qemu-ifdown.sh \
   "$@"

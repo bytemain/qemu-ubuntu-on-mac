@@ -1,6 +1,11 @@
 
 configure host-only network.
 
+```sh
+  -netdev tap,id=secnet0,script=./tap-up.sh,downscript=./tap-down.sh \
+  -device e1000,netdev=secnet0,mac=52:55:00:d1:55:01 \
+```
+
 ![](https://i.loli.net/2021/03/16/JM3Gklz76KiPLcs.jpg)
 
 this can make you connect ubuntu server by ip:
