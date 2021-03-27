@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ifconfig bridge0 deletem $1
+ifconfig bridge0 deletem "$1"
